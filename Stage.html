@@ -1,0 +1,49 @@
+<body>
+    <center>
+        <video autoplay loop muted playsinline class="background-clip">
+            <source src="Beach Website Background Video.mp4" type="video/mp4">
+        </video>
+        <div class="log-in">
+            <div class="box1">Log In</div>
+            <div class="box2">
+                <input type="email" class="Email" id="email" placeholder="Email" />
+            </div>
+            <div class="box3">
+                <input type="password" class="password" id="password" placeholder="Password" />
+            </div>
+            <a href="https://www.bing.com/search?q=forgot+password+meaning" target="_blank">
+                <i>Forgot Password?</i>
+            </a>
+            <div class="box5">
+                <button type="button" id="submitbutton">Log In</button>
+            </div>
+            <head>
+                <link rel="stylesheet" type="text/css" href="Css.css">
+            </head>
+        </div>
+    </center>
+
+    <script>
+        const predefinedPassword = "12345678"; 
+
+        document.getElementById("submitbutton").addEventListener("click", function() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+            if (!emailRegex.test(email)) {
+                alert("Invalid email format");
+                return;
+            }
+
+            if (password === predefinedPassword) {
+                alert("You're Welcome");
+                window.location.href = "Webing.html";
+            } else {
+                alert("Incorrect password, please try again");
+            }
+        });
+    </script>
+</body>
+</html>
